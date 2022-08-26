@@ -7,7 +7,7 @@ description: >
 
 # This information will be displayed in the orb registry and is not mandatory.
 display:
-  home_url: "https://www.slim.ai/docs/quickstart.html"
+  home_url: "https://github.com/focaloid-dev/slim-xray-poc-orb/wiki"
   source_url: "https://github.com/focaloid-dev/slim-xray-poc-orb"
 # If your orb requires other orbs, you can import them like this. Otherwise remove the "orbs" stanza.
 # orbs:
