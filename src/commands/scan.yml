@@ -3,13 +3,13 @@ description: >
 # What will this command do?
 # Descriptions should be short, simple, and clear.
 parameters:
-  to:
+  imageName:
     type: string
     default: "Slim"
     description: "This is a slim description"
 steps:
   - run:
       environment:
-        PARAM_TO: <<parameters.to>>
+        PARAM_IMAGE: <<parameters.imageName>>
       name: Hello Slim
       command: <<include(scripts/scan.sh)>>
