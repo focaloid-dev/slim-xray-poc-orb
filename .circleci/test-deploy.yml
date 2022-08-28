@@ -16,7 +16,7 @@ jobs:
     steps:
       - checkout
       # Run your orb's commands to validate them.
-      - slim-xray-poc-orb/greet
+      - slim-xray-poc-orb/scan
 workflows:
   test-deploy:
     jobs:
