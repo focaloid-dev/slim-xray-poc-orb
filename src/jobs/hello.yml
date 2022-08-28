@@ -7,7 +7,7 @@ executor: default
 parameters:
   imageName:
     type: string
-    default: "Slim"
+    default: "Slim testing hello"
     description: "This is a slim description"
 steps:
   - scan:
