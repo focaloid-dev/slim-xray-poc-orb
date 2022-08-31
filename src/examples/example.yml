@@ -7,7 +7,6 @@ usage:
   version: 2.1
   orbs:
     slim-xray-poc-orb: focaloid-dev/slim-xray-poc-orb@dev:021e6728d99623eb5c40b98479c318ec7a88fea6
-    
   jobs:
     scan:
       docker:
