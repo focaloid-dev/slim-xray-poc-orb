@@ -7,7 +7,6 @@ parameters:
     type: string
     default: "Slim"
     description: "This is a slim image to be scanned"
-working_directory: /tmp
 steps:
   - run:
       environment:
