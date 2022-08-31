@@ -22,12 +22,12 @@ jobs:
           version: 20.10.14
           docker_layer_caching: true
 
-      # build and push Docker image
+      # build and push Docker image , Chedk this fo dynamic orbs
       - run: |
           TAG=0.1.$CIRCLE_BUILD_NUM
-          docker build -t CircleCI-Public/circleci-demo-docker:$TAG .
+          docker build -t circleci-public/circleci-demo-docker:$TAG .
           echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
-          docker push CircleCI-Public/circleci-demo-docker:$TAG
+          docker push circleci-public/circleci-demo-docker:$TAG
       # Run your orb's commands to validate them.
       - slim-xray-poc-orb/scan
 workflows:
