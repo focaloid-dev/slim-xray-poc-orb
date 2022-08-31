@@ -22,7 +22,8 @@ jobs:
           version: 20.10.14
           docker_layer_caching: true
       # Run your orb's commands to validate them.
-      - slim-xray-poc-orb/scan
+      - slim-xray-poc-orb/scan:
+          imageName: cimg/base:current
 workflows:
   test-deploy:
     jobs:
