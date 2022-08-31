@@ -10,5 +10,5 @@ steps:
   - run:
       environment:
         PARAM_IMAGE: <<parameters.imageName>>
-      name: Installing Slim Cli and performing a Xray scanning over <<parameters.imageName>>
+      name: Installing "Docker Slim Cli and performing a X-Ray scan over <<parameters.imageName>>
       command: <<include(scripts/scan.sh)>>
