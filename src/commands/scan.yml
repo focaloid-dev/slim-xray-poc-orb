@@ -1,15 +1,14 @@
 description: >
-  This command echos "Hello Slim" using file inclusion.
+  This will install Slim CLI  and perform a x ray scan oven an image.
 # What will this command do?
 # Descriptions should be short, simple, and clear.
 parameters:
   imageName:
     type: string
-    default: "Slim"
-    description: "This is a slim description"
+    description: "Docker Image to be scanned"
 steps:
   - run:
       environment:
         PARAM_IMAGE: <<parameters.imageName>>
-      name: Hello Slim
+      name: Installing "Docker Slim Cli and performing a X-Ray scan over <<parameters.imageName>>
       command: <<include(scripts/scan.sh)>>

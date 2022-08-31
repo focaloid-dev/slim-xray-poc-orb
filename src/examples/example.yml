@@ -1,13 +1,28 @@
 description: >
-  Sample example description.
+  Docker context are required to use this ORB
 # Provide a use-case based example for using this orb.
 # Everything in the `usage` section will be displayed in the orb registry.
 # Comments are not retained.
 usage:
   version: 2.1
   orbs:
-    <orb-name>: <namespace>/<orb-name>@1.2.3
+    slim-xray-poc-orb: focaloid-dev/slim-xray-poc-orb@dev:021e6728d99623eb5c40b98479c318ec7a88fea6
+  jobs:
+    scan:
+      docker:
+        - image: "cimg/base:stable"
+          auth:
+            username: $DOCKER_HUB_USERNAME
+            password: $DOCKER_HUB_PASSWORD # context / project UI env-var reference
+      steps:
+        - checkout
+        - setup_remote_docker:
+            version: 20.10.14
+            docker_layer_caching: true
+
+        - slim-xray-poc-orb/scan:
+            imageName: cimg/base:stable
   workflows:
-    use-my-orb:
+    slim-xray-poc-orb:
       jobs:
-        - <orb-name>/<job-name>
+        - scan
