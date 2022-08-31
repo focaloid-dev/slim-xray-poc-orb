@@ -1,4 +1,6 @@
 #!/bin/bash
-echo Hello "${PARAM_IMAGE}"
+echo Startin Slim CLI installation 
 curl -sL https://raw.githubusercontent.com/docker-slim/docker-slim/master/scripts/install-dockerslim.sh | sudo -E bash -
-docker-slim  xray --pull circleci/picard
+
+echo Performing a xray scan over Image: "${PARAM_IMAGE}"
+docker-slim xray --pull "${PARAM_IMAGE}"
