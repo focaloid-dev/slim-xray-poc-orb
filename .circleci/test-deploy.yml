@@ -13,8 +13,21 @@ jobs:
   command-tests:
     docker:
       - image: cimg/base:current
+        auth:
+          username: alshoja@gmail.com
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
+      - setup_remote_docker:
+          version: 20.10.14
+          docker_layer_caching: true
+
+      # build and push Docker image
+      - run: |
+          TAG=0.1.$CIRCLE_BUILD_NUM
+          docker build -t CircleCI-Public/circleci-demo-docker:$TAG .
+          echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+          docker push CircleCI-Public/circleci-demo-docker:$TAG
       # Run your orb's commands to validate them.
       - slim-xray-poc-orb/scan
 workflows:
