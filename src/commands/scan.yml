@@ -6,10 +6,10 @@ parameters:
   imageName:
     type: string
     default: "Slim"
-    description: "This is a slim description"
+    description: "This is a slim image to be scanned"
 steps:
   - run:
       environment:
         PARAM_IMAGE: <<parameters.imageName>>
-      name: Hello Slim
+      name: Installing Slim Cli
       command: <<include(scripts/scan.sh)>>

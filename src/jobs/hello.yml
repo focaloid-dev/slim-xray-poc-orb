@@ -1,6 +1,7 @@
 description: >
   Sample description
 # What will this job do?
+
 executor: default
 
 parameters:
@@ -9,9 +10,5 @@ parameters:
     default: "Slim testing hello"
     description: "This is a slim description"
 steps:
-  - run:
-      name: Installing Slim Cli
-      command: |
-        curl -sL https://raw.githubusercontent.com/docker-slim/docker-slim/master/scripts/install-dockerslim.sh | sudo -E bash -
   - scan:
       imageName: << parameters.imageName >>
