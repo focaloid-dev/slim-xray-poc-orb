@@ -21,7 +21,7 @@ usage:
             docker_layer_caching: true
 
         - slim-xray-poc-orb/scan:
-            imageName: cimg/base:stable
+            imageName: "<Give the Image name that should be scanned>"
   workflows:
     slim-xray-poc-orb:
       jobs:
