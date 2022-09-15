@@ -13,7 +13,7 @@ usage:
         - image: "cimg/base:stable"
           auth:
             username: $DOCKER_HUB_USERNAME
-            password: $DOCKER_HUB_PASSWORD # context / project UI env-var reference
+            password: $DOCKER_HUB_PASSWORD # context / project UI env-var #reference not mandatory
       steps:
         - checkout
         - setup_remote_docker:
@@ -23,8 +23,8 @@ usage:
         - slim-xray-poc-orb/scan:
             imageName: "<Give the Image name that should be scanned>"
         - store_artifacts:
-           path: "/some/path-1"
-           destination: "artifact-file"
+           path: "/some/path/"
+           destination: "artifact-filename"
   workflows:
     slim-xray-poc-orb:
       jobs:
